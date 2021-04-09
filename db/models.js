@@ -1,10 +1,10 @@
 module.exports = function(mongoose) {
-  let userSchema = new Schema({
-    id: ObjectId,
-    username: {type: String, index: true},
+  let userSchema = new mongoose.Schema({
+    username: {type: String, required: true, unique: true},
+    birthdate: Date,
     name: {
-      first: String,
-      last: String
+      first: {type: String, default: ''},
+      last: {type: String, default: ''}
     },
     signup: { type: Date, default: Date.now },
   });

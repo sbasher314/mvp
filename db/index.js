@@ -1,13 +1,16 @@
 const mongoose = require('mongoose');
-const models = require('./models')(mongoose);
+const models = require('./models.js')(mongoose);
 
 mongoose.connect('mongodb://localhost/mvp', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
 
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
+/* example user for testing purposes */
 
-});
+db.addUser = (parameters) => {
+  return models.User.create(parameters);
+};
+
+db.on('error', console.error.bind(console, 'connection error:'));
 
 module.exports = db;

@@ -20,7 +20,9 @@ module.exports = {
       }
     ]
   },
-  resolve: { extensions: ['*', '.js', '.jsx'] },
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
+  },
   output: {
     path: path.join(__dirname, '/bundle'),
     filename: 'index_bundle.js'
