@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const models = require('./models.js')(mongoose);
-
-mongoose.connect('mongodb://localhost/mvp', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
 
