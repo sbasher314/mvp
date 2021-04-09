@@ -3,24 +3,15 @@ import Tracker from './components/Tracker';
 import LogForm from './components/LogForm';
 import Navbar from './components/Navbar';
 import GoogleLogin from './components/GoogleLogin';
-import SettingsBtn from './components/SettingsBtn';
+
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: 'anonymous',
-      isLogin: false
-    };
+  log() {
+    console.log('sup');
   }
-
-  login(username) {
-    this.setState({username});
-    console.log(this.state);
-  }
-
   render() {
     return (
       <div className = 'main'>
+        <button onClick={this.log}>click me</button>
         <nav className="navbar">
           <GoogleLogin />
         </nav>

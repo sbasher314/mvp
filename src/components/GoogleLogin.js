@@ -57,7 +57,7 @@ class GoogleLogin extends Component {
     return (
       <div className='authBtn'>
         {this.state.isSignedIn ?
-          <div id='logoutButton' onClick={this.signOut}>Logout</div> :
+          <div id='logoutButton' onClick={function() {console.log('aggg')} }>Logout</div> :
           <div id='loginButton'>Login with google</div>
         }
       </div>
