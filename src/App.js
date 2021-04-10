@@ -8,6 +8,7 @@ class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
+      demo: true,
       trackerType: 'week',
       logs: [
         {
@@ -56,7 +57,7 @@ class App extends Component {
       return axios.get('/history', {user, type: this.trackerType})
         .then(data => this.setState({logs: data}));
     } else {
-      this.setState({isSignedIn: false, logs: []})
+      this.setState({isSignedIn: false, logs: this.state.demo ? this.state.logs : []})
     }
   }
 

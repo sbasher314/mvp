@@ -56,8 +56,12 @@ class Tracker extends Component {
             {this.props.type === 'week' &&
                 dayData.map(data => (
                   <span>
-                    <div className="mood"> Mood: {data.mood}</div>
-                    <div className="description"> Description: {data.description}</div>
+                    <div className="mood"> Mood:
+                      <text contenteditable="true">{data.mood}</text>
+                    </div>
+                    <div className="description"> Description:
+                      <text contenteditable="true">{data.description}</text>
+                    </div>
                     <Pixel mood={data.mood}/>
                     </span>
                 ))

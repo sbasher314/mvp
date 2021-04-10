@@ -77,6 +77,10 @@ div.visualizerPixels {
   flex-grow: 1;
 }
 
+div.visualizerPixels span div {
+	flex-direction: row;
+}
+
 .pixel {
 	width: calc(100% - 8px);
 	height: 10px;
@@ -106,4 +110,10 @@ div.visualizerPixels {
 
 .pixel[mood="excited"] {
   background: #fe0;
+}
+
+text {
+  flex-grow: 1;
+  padding: 0px 4px;
+  border-bottom: 1px dashed #666;
 }
