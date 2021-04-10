@@ -9,11 +9,13 @@
   "scripts": {
     "clean": "rm dist/bundle.js",
     "start": "node ./server/index.js",
+    "watch": "webpack --watch",
     "build-dev": "webpack --mode development",
     "build-prod": "webpack --mode production",
     "server": "nodemon ./server/index.js"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "google-auth-library": "^7.0.4",
     "mongoose": "^5.12.3",

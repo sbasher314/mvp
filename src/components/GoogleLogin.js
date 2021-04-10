@@ -18,6 +18,7 @@ class GoogleLogin extends Component {
   onSuccess(e) {
     console.log('success! ', e);
     this.setState({user: e, isSignedIn: true});
+    this.props.onChange();
   }
 
   signOut() {
@@ -25,6 +26,7 @@ class GoogleLogin extends Component {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(() => {
       this.setState({user: {}, isSignedIn: false})
+      this.props.onChange();
       console.log('User signed out.');
     });
 
@@ -43,6 +45,7 @@ class GoogleLogin extends Component {
           user: e.currentUser.get(),
           isSignedIn: this.auth2.isSignedIn.get()
         });
+        this.props.onLoad();
       });
     });
 

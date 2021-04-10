@@ -9,7 +9,7 @@ div.main {
 nav.navbar {
   display: flex;
   height: 4em;
-  width: 100%;
+  width: calc(100% - 8px);
   background: #eee;
   align-items: center;
   padding: 4px;
@@ -51,4 +51,59 @@ nav.navbar {
   position: absolute;
   text-align: center;
   width: calc( 200px - 50px);
+}
+
+div.visualizer {
+  display: flex;
+  flex-direction: row;
+  padding: 4px
+}
+div.visualizer div {
+  display:flex;
+  flex-direction: column;
+}
+
+div.visualizer div span {
+  flex-basis: 100%;
+  padding: 4px;
+  border-bottom: 1px solid #666;
+}
+
+div.visualizerLabel {
+  border-right: 1px solid #666;
+}
+
+div.visualizerPixels {
+  flex-grow: 1;
+}
+
+.pixel {
+	width: calc(100% - 8px);
+	height: 10px;
+	margin: 4px;
+  background: #aaa;
+}
+
+.pixel[mood="happy"] {
+  background: #3c6;
+}
+
+.pixel[mood="sad"] {
+  background: #06c;
+}
+
+.pixel[mood="neutral"] {
+  background: #ddd;
+}
+
+.pixel[mood="angry"] {
+  background: #f30;
+}
+
+.pixel[mood="anxious"] {
+  background: #a09;
+}
+
+.pixel[mood="excited"] {
+  background: #fe0;
 }
